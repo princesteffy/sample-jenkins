@@ -3,21 +3,21 @@ pipeline {
     stages {
         stage('compile stage') {
             steps {
-                maven(maven : 'maven_3.5.3'){
+                maven(maven : 'maven_3.6.0'){
                 bat 'mvn clean compile'
             }
          }
      }
      stage('Testing stage'){
         steps {
-            maven(maven : 'maven_3.5.3'){
+            maven(maven : 'maven_3.6.0'){
                 bat 'mvn test'
             }
          }
      }
       stage('Deployment stage'){
         steps {
-            maven(maven : 'maven_3.5.3'){
+            maven(maven : 'maven_3.6.0'){
                 bat 'mvn deploy'
              }
          }
